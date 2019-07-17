@@ -3,6 +3,8 @@ syntax on
 set number
 set nocompatible              " be iMproved, required
 filetype off                  " required
+:set ignorecase
+:set smartcase
 
 " Tabs and spaces
 " Set default to 4 space tabs
@@ -35,6 +37,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'qpkorr/vim-bufkill'
 
 " Plugins for The Aesthetic
 Plugin 'flazz/vim-colorschemes'
@@ -44,6 +47,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 
 " The legend Tim Pope
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-surround'
 
@@ -84,6 +88,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize=60
+
+" Fugitive + plugins config
+let g:github_enterprise_urls = ['https://github.ibm.com']
 
 " Airline config
 let g:airline#extensions#tabline#enabled = 1
@@ -151,4 +158,6 @@ autocmd FileType clojure nnoremap <Leader>w :%Eval<CR>
 " Rust config
 autocmd FileType rust let g:rustfmt_autosave = 1
 autocmd FileType rust nnoremap <Leader>w :!cargo run<CR>
+autocmd FileType rust nnoremap <Leader>c :!cargo check<CR>
+autocmd FileType rust nnoremap <Leader>t :!cargo test<CR>
 
