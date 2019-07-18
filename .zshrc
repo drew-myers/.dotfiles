@@ -45,3 +45,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.mac.zsh
 fi
+
+# No need to be gendered now
+alias person="man"
+
