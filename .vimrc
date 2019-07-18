@@ -161,3 +161,5 @@ autocmd FileType rust nnoremap <Leader>w :!cargo run<CR>
 autocmd FileType rust nnoremap <Leader>c :!cargo check<CR>
 autocmd FileType rust nnoremap <Leader>t :!cargo test<CR>
 
+" Python config
+autocmd Filetype python,python3,py nnoremap <Leader>w :!python %<CR>
