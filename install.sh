@@ -12,4 +12,7 @@ rm -rf ~/.oh-my-zsh/custom
 ln -sv ~/.dotfiles/oh-my-zsh-custom ~/.oh-my-zsh/custom
 
 # Copy this one since it's to be locally customizable and this is just and empty template
-cp ~/.dotfiles/.local.zsh ~
+if [[ ! -f ~/.local.zsh ]]; then
+    cp ~/.dotfiles/.local.zsh ~
+fi
+
