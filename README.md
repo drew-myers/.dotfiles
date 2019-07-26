@@ -10,9 +10,10 @@ Any:
 - base16-shell
 - sdkman
 - node + nvm
-- cargo (rust)
+- cargo
 - go
 - lein
+- stack
 
 Linux:
 - bspwm
@@ -21,7 +22,6 @@ Linux:
 Mac:
 - homebrew
 - macvim
-
 
 Manual Vim Setup Steps:
 - Install Vundle
