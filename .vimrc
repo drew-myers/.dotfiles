@@ -18,6 +18,7 @@ autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype python setlocal ts=2 sts=2 sw=2
 autocmd Filetype python3 setlocal ts=2 sts=2 sw=2
 autocmd Filetype py setlocal ts=2 sts=2 sw=2
+autocmd Filetype haskell,hs setlocal ts=2 sts=2 sw=2
 
 
 " Vundle, baby
@@ -69,6 +70,10 @@ Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'elmcast/elm-vim'
+
+" Haskell plugins
+Plugin 'alx741/vim-hindent'
+Plugin 'neovimhaskell/haskell-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -163,3 +168,6 @@ autocmd FileType rust nnoremap <Leader>t :!cargo test<CR>
 
 " Python config
 autocmd Filetype python,python3,py nnoremap <Leader>w :!python %<CR>
+
+" Haskell config
+autocmd Filetype haskell,hs nnoremap <Leader>w :!stack run<CR>
