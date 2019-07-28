@@ -93,6 +93,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeWinSize=60
+let g:NERDTreeShowHidden=1
 
 " Fugitive + plugins config
 let g:github_enterprise_urls = ['https://github.ibm.com']

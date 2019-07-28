@@ -1,0 +1,12 @@
+def_key "k"
+  scroll_up
+def_key "j"
+  scroll_down
+def_key "l"
+  enter_directory
+def_key "h"
+  jump_to_parent_directory
+def_key "d"
+  delete_playlist_items
+def_key "d"
+  delete_stored_playlist

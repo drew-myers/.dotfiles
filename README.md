@@ -1,7 +1,7 @@
 # dotfiles
 my dotfiles and setup checklist
 
-When setting up a laptop:
+When setting up a machine:
 
 Any:
 - vim

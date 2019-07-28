@@ -17,14 +17,14 @@ if [[ -a $LOCAL_EXT ]]; then
     source $LOCAL_EXT
 fi
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ "$OSTYPE" == "linux"* ]]; then
     source ~/.linux.zsh
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.mac.zsh
 fi
 
 # Setup oh-my-zsh
-export ZSH="/Users/acmyers/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # Rando stuff I put on almost every computer
