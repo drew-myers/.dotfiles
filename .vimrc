@@ -85,7 +85,6 @@ filetype plugin indent on    " required
 " Generic tab config
 map <C-n> :bnext<CR>
 map <C-m> :bprevious<CR>
-nnoremap <Leader>f <C-w>
 
 " NERDTree config 
 map <C-b> :NERDTreeToggle<CR>
@@ -146,9 +145,6 @@ let base16colorspace=256
 " colorscheme base16-onedark
 " colorscheme base16-tomorrow-night-eighties
 colorscheme base16-eighties
-
-
-
 
 " lang-specific config below
 " js and ts config
