@@ -3,9 +3,6 @@
       create: true
       relink: false
 
-- create:
-    - ~/.local.zsh
-
 - clean: 
     ~/:
       recursive: false
