@@ -1,4 +1,4 @@
-return 
+return {
   {
     'akinsho/toggleterm.nvim',
     version = '*',
@@ -7,4 +7,5 @@ return
       vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', { desc = 'Toggle terminal' })
       require('toggleterm').setup {}
     end,
-  }
+  },
+}

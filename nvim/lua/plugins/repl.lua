@@ -1,4 +1,4 @@
-return 
+return {
   {
     'geg2102/nvim-python-repl',
     dependencies = 'nvim-treesitter',
@@ -43,4 +43,5 @@ return
         },
       }
     end,
-  }
+  },
+}

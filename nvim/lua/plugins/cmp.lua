@@ -1,4 +1,4 @@
-return
+return {
   {
     'saghen/blink.cmp',
     -- optional: provides snippets for the snippet source
@@ -37,4 +37,5 @@ return
       },
     },
     opts_extend = { 'sources.default' },
-  }
+  },
+}

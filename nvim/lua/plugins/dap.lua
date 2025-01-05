@@ -1,4 +1,4 @@
-return
+return {
   {
     'rcarriga/nvim-dap-ui',
     event = 'VeryLazy',
@@ -43,4 +43,5 @@ return
       require('dap-python').setup 'python'
       require('dapui').setup()
     end,
-  }
+  },
+}

@@ -1,4 +1,4 @@
-return
+return {
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter',
@@ -55,4 +55,5 @@ return
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
-  }
+  },
+}

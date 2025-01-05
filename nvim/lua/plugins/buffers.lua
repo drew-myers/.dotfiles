@@ -1,4 +1,4 @@
-return
+return {
   {
     'dzfrias/arena.nvim',
     event = 'BufWinEnter',
@@ -7,4 +7,5 @@ return
       arena.setup()
       vim.keymap.set('n', '<leader><leader>', arena.toggle, { desc = '[ ] Arena buffer picker' })
     end,
-  }
+  },
+}
