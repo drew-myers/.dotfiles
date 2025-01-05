@@ -1,3 +1,23 @@
+local treesitter_langs = {
+  'bash',
+  'c',
+  'diff',
+  'go',
+  'html',
+  'lua',
+  'luadoc',
+  'markdown',
+  'markdown_inline',
+  'python',
+  'query',
+  'vim',
+  'vimdoc',
+}
+local local_treesitter_langs = require('local').treesitter_langs
+for k, v in pairs(local_treesitter_langs) do
+  treesitter_langs[k] = v
+end
+
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -5,23 +25,7 @@ return {
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = {
-        'bash',
-        'c',
-        'diff',
-        'html',
-        'lua',
-        'luadoc',
-        'markdown',
-        'markdown_inline',
-        'query',
-        'vim',
-        'vimdoc',
-        'roc',
-        'haskell',
-        'ocaml',
-        'elm',
-      },
+      ensure_installed = treesitter_langs,
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
