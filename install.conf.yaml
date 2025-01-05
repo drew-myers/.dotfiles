@@ -3,6 +3,9 @@
       create: true
       relink: false
 
+- create:
+    - ~/.local.zsh
+
 - clean: 
     ~/:
       recursive: false
@@ -14,6 +17,11 @@
       path: nvim
     ~/.config/ghostty/config:
       path: ghostty-config
+    ~/.zshrc:
+      path: zshrc
+      relink: true
+    ~/.config/tmux/tmux.conf:
+      path: tmux.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
