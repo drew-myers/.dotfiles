@@ -152,9 +152,7 @@ return {
         -- clangd = {},
         gopls = {},
         pyright = {},
-        hls = {},
-        ocamllsp = {},
-        elmls = {},
+        ruff = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -180,6 +178,7 @@ return {
           },
         },
       }
+      servers = require('tools').extend_with_overrides(servers, 'lsp_servers')
 
       local lspconfig = require 'lspconfig'
       for server, config in pairs(servers) do
