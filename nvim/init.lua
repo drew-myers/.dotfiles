@@ -102,6 +102,16 @@ vim.keymap.set('n', '<C-l>', ':vertical resize -5<CR>')
 vim.keymap.set('n', ']b', ':bnext<CR>', { noremap = true, silent = true, desc = 'Go to next buffer' })
 vim.keymap.set('n', '[b', ':bprev<CR>', { noremap = true, silent = true, desc = 'Go to previous buffer' })
 
+-- Neovide config
+if vim.g.neovide then
+  -- Allow clipboard copy paste in neovim
+  vim.g.neovide_input_use_logo = 1
+  vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true })
+end
+
 -- [[ Basic Autocommands ]]
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -148,6 +158,8 @@ require('lazy').setup({
   require 'plugins.shell',
   require 'plugins.markdown',
   require 'plugins.ui',
+  require 'plugins.test',
+  require 'plugins.llm',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -172,6 +184,6 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
--- Putting this down here for now because it's experimental and I 
+-- Putting this down here for now because it's experimental and I
 -- don't know how it works
 require 'plugins.lang.roc'
