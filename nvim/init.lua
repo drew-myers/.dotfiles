@@ -140,7 +140,6 @@ require('lazy').setup({
   require 'plugins.comments',
   require 'plugins.git',
   require 'plugins.which-key',
-  require 'plugins.fzf',
   require 'plugins.lsp',
   require 'plugins.format',
   require 'plugins.cmp',
