@@ -140,7 +140,7 @@ require('lazy').setup({
   require 'plugins.comments',
   require 'plugins.git',
   require 'plugins.which-key',
-  require 'plugins.telescope',
+  require 'plugins.fzf',
   require 'plugins.lsp',
   require 'plugins.format',
   require 'plugins.cmp',
@@ -149,17 +149,29 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.treesitter',
   require 'plugins.line',
-  require 'plugins.buffers',
   require 'plugins.repl',
   require 'plugins.dap',
   require 'plugins.yazi',
   require 'plugins.marks',
   require 'plugins.nav',
-  require 'plugins.shell',
+  require 'plugins.snacks',
   require 'plugins.markdown',
   require 'plugins.ui',
   require 'plugins.test',
   require 'plugins.llm',
+
+  {
+    'rmagatti/auto-session',
+    lazy = false,
+
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      suppressed_dirs = { '~/', '~/Downloads', '/' },
+      -- log_level = 'debug',
+    },
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

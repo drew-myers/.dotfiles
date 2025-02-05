@@ -56,13 +56,29 @@ return {
               },
             })
           end,
+          qwencoder_small = function()
+            return require('codecompanion.adapters').extend('ollama', {
+              name = 'quencoder', -- Give this adapter a different name to differentiate it from the default ollama adapter
+              schema = {
+                model = {
+                  default = 'qwen2.5-coder:14b',
+                },
+                num_ctx = {
+                  default = 16384,
+                },
+                num_predict = {
+                  default = -1,
+                },
+              },
+            })
+          end,
         },
         strategies = {
           chat = {
-            adapter = 'qwencoder',
+            adapter = 'qwencoder_small',
           },
           inline = {
-            adapter = 'qwencoder',
+            adapter = 'qwencoder_small',
           },
         },
       }
