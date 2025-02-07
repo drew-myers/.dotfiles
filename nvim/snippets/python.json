@@ -1,0 +1,9 @@
+{
+  "With Atomic Block": {
+    "prefix": "wab",
+    "body": [
+      "with atomic() as session:",
+      "    "
+    ]
+  }
+}
