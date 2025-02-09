@@ -36,6 +36,11 @@ return {
         require('dap-python').test_method()
       end, { desc = '[d]ebug [f]unction' })
 
+      vim.keymap.set('n', '<leader>dd', function()
+        require('dap').disconnect()
+        require('dapui').close()
+      end, { desc = '[d]ebug [d]isconnect' })
+
       vim.keymap.set('n', '<leader>du', function()
         require('dapui').toggle()
       end, { desc = '[d]ebug [U]I' })
