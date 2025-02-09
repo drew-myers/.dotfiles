@@ -163,6 +163,7 @@ require('lazy').setup({
   require 'plugins.test',
   require 'plugins.llm',
   require 'plugins.oil',
+  require 'plugins.images',
 
   {
     'rmagatti/auto-session',
