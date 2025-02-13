@@ -22,7 +22,9 @@ return {
       scratch = { enabled = true },
       scroll = { enabled = true },
       statuscolumn = { enabled = true },
-      terminal = { enabled = true },
+      terminal = {
+        enabled = true,
+      },
       words = { enabled = true },
     },
     keys = {
@@ -400,7 +402,14 @@ return {
       {
         '<leader>tt',
         function()
-          Snacks.terminal()
+          Snacks.terminal(vim.o.shell, { win = { position = 'right' } })
+        end,
+        desc = 'Toggle Terminal',
+      },
+      {
+        '<leader>tT',
+        function()
+          Snacks.terminal.open(vim.o.shell, { win = { position = 'float' } })
         end,
         desc = 'Toggle Terminal',
       },
