@@ -19,6 +19,10 @@
       relink: true
     ~/.config/tmux/tmux.conf:
       path: tmux.conf
+    ~/.config/nushell/:
+      path: nushell
+    ~/Library/Application Support/nushell/:
+      path: ~/.config/nushell
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
