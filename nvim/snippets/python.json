@@ -5,5 +5,16 @@
       "with atomic() as session:",
       "    "
     ]
+  },
+  "Mock Patch Block": {
+    "prefix": "mpb",
+    "body": [
+      "with (",
+      "    mock.patch(",
+      "        \"${1:mock_path}\",",
+      "        autospec=True",
+      "    ) as ${2:mock_name}",
+      "):"
+    ]
   }
 }
