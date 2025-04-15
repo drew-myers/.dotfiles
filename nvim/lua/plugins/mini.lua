@@ -45,6 +45,9 @@ return {
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+      require('mini.diff').setup {
+        version = false,
+      }
     end,
   },
 }
