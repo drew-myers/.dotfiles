@@ -7,6 +7,12 @@ return {
     },
     config = function()
       require('codecompanion').setup {
+        display = {
+          diff = {
+            enabled = true,
+            provider = 'mini_diff',
+          },
+        },
         adapters = {
           deepseek = function()
             return require('codecompanion.adapters').extend('ollama', {
@@ -58,7 +64,7 @@ return {
           end,
           qwencoder_small = function()
             return require('codecompanion.adapters').extend('ollama', {
-              name = 'quencoder', -- Give this adapter a different name to differentiate it from the default ollama adapter
+              name = 'qwencoder_small', -- Give this adapter a different name to differentiate it from the default ollama adapter
               schema = {
                 model = {
                   default = 'qwen2.5-coder:14b',
@@ -72,16 +78,85 @@ return {
               },
             })
           end,
+          g1b = function()
+            return require('codecompanion.adapters').extend('ollama', {
+              name = 'g1b', -- Give this adapter a different name to differentiate it from the default ollama adapter
+              schema = {
+                model = {
+                  default = 'gemma3:1b',
+                },
+                num_ctx = {
+                  default = 32000,
+                },
+                num_predict = {
+                  default = -1,
+                },
+              },
+            })
+          end,
+          g4b = function()
+            return require('codecompanion.adapters').extend('ollama', {
+              name = 'g4b', -- Give this adapter a different name to differentiate it from the default ollama adapter
+              schema = {
+                model = {
+                  default = 'gemma3:4b',
+                },
+                num_ctx = {
+                  default = 32000,
+                },
+                num_predict = {
+                  default = -1,
+                },
+              },
+            })
+          end,
+          g12b = function()
+            return require('codecompanion.adapters').extend('ollama', {
+              name = 'g12b', -- Give this adapter a different name to differentiate it from the default ollama adapter
+              schema = {
+                model = {
+                  default = 'gemma3:12b',
+                },
+                num_ctx = {
+                  default = 32000,
+                },
+                num_predict = {
+                  default = -1,
+                },
+              },
+            })
+          end,
         },
         strategies = {
           chat = {
-            adapter = 'qwencoder_small',
+            adapter = 'g4b',
           },
           inline = {
-            adapter = 'qwencoder_small',
+            adapter = 'g4b',
           },
         },
       }
+      vim.cmd [[cab cc CodeCompanion]]
     end,
+    keys = {
+      {
+        '<C-a>',
+        '<cmd>CodeCompanionActions<cr>',
+        desc = 'Open LLM Actions',
+        mode = { 'n', 'v' },
+      },
+      {
+        '<LocalLeader>a',
+        '<cmd>CodeCompanionChat Toggle<cr>',
+        desc = 'Toggle LLM Chat',
+        mode = { 'n', 'v' },
+      },
+      {
+        'ga',
+        '<cmd>CodeCompanionChat Add<cr>',
+        desc = 'Send code to LLM chat',
+        mode = { 'v' },
+      },
+    },
   },
 }
