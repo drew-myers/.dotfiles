@@ -8,6 +8,7 @@ vim.g.have_nerd_font = true
 -- Enable 24 bit colors
 vim.opt.termguicolors = true
 
+vim.o.shell = 'nu'
 -- Treesitter defines folds
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'

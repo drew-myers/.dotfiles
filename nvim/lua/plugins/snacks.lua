@@ -409,9 +409,16 @@ return {
       {
         '<leader>tT',
         function()
+          Snacks.terminal(vim.o.shell, { win = { position = 'bottom' } })
+        end,
+        desc = 'Toggle Terminal (Bottom)',
+      },
+      {
+        '<leader>tF',
+        function()
           Snacks.terminal.open(vim.o.shell, { win = { position = 'float' } })
         end,
-        desc = 'Toggle Terminal',
+        desc = 'Toggle Floating Terminal',
       },
       {
         '<leader>.',
